@@ -78,6 +78,7 @@ vercel --prod
 Set the output directory to `dist/101509539-lab-test2-comp3133/browser` in Vercel settings.
 
 URL: https://comp3133-lab-test-2-sepia.vercel.app
+
 ---
 
 ## Project Structure
