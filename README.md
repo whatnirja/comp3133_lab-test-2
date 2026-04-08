@@ -21,7 +21,10 @@ An Angular 21 application that fetches and displays SpaceX mission data using th
 ---
 
 ## Screenshots
-
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 12 18 56 PM" src="https://github.com/user-attachments/assets/fba61e77-ade1-47e5-a36f-0bbdc73a37df" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 12 19 07 PM" src="https://github.com/user-attachments/assets/4b94d6fd-38c9-40da-af86-5b64b030f8c5" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 12 19 21 PM" src="https://github.com/user-attachments/assets/e15596d9-1b05-4e30-b34b-b75af3a5b266" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 12 19 39 PM" src="https://github.com/user-attachments/assets/d38652ad-924a-4f2c-a608-30c7aa8baba0" />
 
 ---
 
@@ -56,7 +59,7 @@ npm install
 ng serve
 
 # 3. Open in browser
-# http://localhost:4200
+http://localhost:4200
 ```
 
 ## How to Build
