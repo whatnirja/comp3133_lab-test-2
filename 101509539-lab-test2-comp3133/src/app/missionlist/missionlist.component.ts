@@ -7,8 +7,8 @@ import { Mission } from '../models/mission';
   selector: 'app-missionlist',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './missionlist.html',
-  styleUrl: './missionlist.css'
+  templateUrl: './missionlist.component.html',
+  styleUrl: './missionlist.component.css'
 })
 export class MissionlistComponent implements OnInit {
   missions = signal<Mission[]>([]);

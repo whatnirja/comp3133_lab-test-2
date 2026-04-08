@@ -8,8 +8,8 @@ import { Mission } from '../models/mission';
   selector: 'app-missionfilter',
   standalone: true,
   imports: [ReactiveFormsModule, RouterLink],
-  templateUrl: './missionfilter.html',
-  styleUrl: './missionfilter.css'
+  templateUrl: './missionfilter.component.html',
+  styleUrl: './missionfilter.component.css'
 })
 export class MissionfilterComponent implements OnInit {
   yearControl = new FormControl('');

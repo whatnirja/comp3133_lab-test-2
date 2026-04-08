@@ -7,8 +7,8 @@ import { Mission } from '../models/mission';
   selector: 'app-missiondetails',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './missiondetails.html',
-  styleUrl: './missiondetails.css'
+  templateUrl: './missiondetails.component.html',
+  styleUrl: './missiondetails.component.css'
 })
 export class MissiondetailsComponent implements OnInit {
   @Input() flightNumber?: number;
