@@ -4,13 +4,13 @@
 
 <div class="filter-bar">
   <select [formControl]="yearControl" class="year-select">
-    <option value="">-- Select Launch Year --</option>
+    <option value=""> Select Launch Year </option>
     @for (year of years; track year) {
       <option [value]="year">{{ year }}</option>
     }
   </select>
   <button class="search-btn" (click)="search()" [disabled]="!yearControl.value">
-    🔍 Search
+     Search
   </button>
 </div>
 
@@ -41,7 +41,7 @@
           @if (mission.links.mission_patch_small) {
             <img [src]="mission.links.mission_patch_small" [alt]="mission.mission_name" class="patch" />
           } @else {
-            <div class="patch-placeholder">🚀</div>
+            <div class="patch-placeholder"></div>
           }
           <div>
             <div class="mission-name">{{ mission.mission_name }}</div>

@@ -25,7 +25,7 @@
             @if (mission.links.mission_patch_small) {
               <img [src]="mission.links.mission_patch_small" [alt]="mission.mission_name" class="mission-patch" />
             } @else {
-              <div class="patch-placeholder">🚀</div>
+              <div class="patch-placeholder"></div>
             }
           </div>
           <div class="mission-info">
@@ -55,13 +55,13 @@
 
         <div class="card-links">
           @if (mission.links.article_link) {
-            <a [href]="mission.links.article_link" target="_blank" class="link-btn" (click)="$event.stopPropagation()">📰 Article</a>
+            <a [href]="mission.links.article_link" target="_blank" class="link-btn" (click)="$event.stopPropagation()">Article</a>
           }
           @if (mission.links.wikipedia) {
-            <a [href]="mission.links.wikipedia" target="_blank" class="link-btn" (click)="$event.stopPropagation()">📖 Wikipedia</a>
+            <a [href]="mission.links.wikipedia" target="_blank" class="link-btn" (click)="$event.stopPropagation()">Wikipedia</a>
           }
           @if (mission.links.video_link) {
-            <a [href]="mission.links.video_link" target="_blank" class="link-btn" (click)="$event.stopPropagation()">▶ Video</a>
+            <a [href]="mission.links.video_link" target="_blank" class="link-btn" (click)="$event.stopPropagation()">Video</a>
           }
         </div>
       </div>

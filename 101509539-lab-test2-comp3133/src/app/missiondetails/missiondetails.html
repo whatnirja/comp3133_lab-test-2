@@ -11,7 +11,7 @@
       @if (m.links.mission_patch_small) {
         <img [src]="m.links.mission_patch_small" class="big-patch" [alt]="m.mission_name" />
       } @else {
-        <div class="patch-placeholder">🚀</div>
+        <div class="patch-placeholder"></div>
       }
       <div class="details-header">
         <h1 class="mission-title">Mission – {{ m.mission_name }}</h1>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">🚀 Rocket</h2>
+      <h2 class="section-title">Rocket</h2>
       <div class="info-grid">
         <div class="info-item"><span class="label">Name</span><span>{{ m.rocket.rocket_name }}</span></div>
         <div class="info-item"><span class="label">Type</span><span>{{ m.rocket.rocket_type }}</span></div>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">📍 Launch Site</h2>
+      <h2 class="section-title">Launch Site</h2>
       <div class="info-grid">
         <div class="info-item"><span class="label">Site</span><span>{{ m.launch_site.site_name_long || 'N/A' }}</span></div>
         <div class="info-item"><span class="label">Site ID</span><span>{{ m.launch_site.site_id || 'N/A' }}</span></div>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">📋 Mission IDs</h2>
+      <h2 class="section-title">Mission IDs</h2>
       @if (m.mission_id.length > 0) {
         <div class="tags-row">
           @for (id of m.mission_id; track id) {
@@ -60,22 +60,22 @@
 
     @if (m.details) {
       <div class="section">
-        <h2 class="section-title">📝 Launch Details</h2>
+        <h2 class="section-title">Launch Details</h2>
         <p class="details-text">{{ m.details }}</p>
       </div>
     }
 
     <div class="section">
-      <h2 class="section-title">🔗 More Info on Launch Details</h2>
+      <h2 class="section-title">More Info on Launch Details</h2>
       <div class="links-row">
         @if (m.links.article_link) {
-          <a [href]="m.links.article_link" target="_blank" class="link-btn">📰 Article</a>
+          <a [href]="m.links.article_link" target="_blank" class="link-btn">Article</a>
         }
         @if (m.links.wikipedia) {
-          <a [href]="m.links.wikipedia" target="_blank" class="link-btn">📖 Wikipedia</a>
+          <a [href]="m.links.wikipedia" target="_blank" class="link-btn">Wikipedia</a>
         }
         @if (m.links.video_link) {
-          <a [href]="m.links.video_link" target="_blank" class="link-btn">▶ Video</a>
+          <a [href]="m.links.video_link" target="_blank" class="link-btn">Video</a>
         }
       </div>
     </div>

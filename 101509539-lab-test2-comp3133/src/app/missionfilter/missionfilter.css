@@ -17,15 +17,17 @@
 }
 
 .year-select {
-  background: var(--card-bg);
+  appearance: none;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
-  padding: 0.6rem 1rem;
-  font-family: 'Exo 2', sans-serif;
+  padding: 0.65rem 2.5rem 0.65rem 1rem;
   font-size: 0.9rem;
   min-width: 200px;
+  cursor: pointer;
   outline: none;
+  transition: border-color 0.15s;
 }
 
 .year-select:focus { border-color: var(--accent); }
@@ -35,7 +37,7 @@
   color: var(--space-black);
   border: none;
   border-radius: 8px;
-  padding: 0.6rem 1.5rem;
+  padding: 0.65rem 2.5rem 0.65rem 1rem;
   font-family: 'Orbitron', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;

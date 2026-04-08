@@ -8,7 +8,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   template: `
     <nav class="navbar">
       <div class="nav-brand">
-        <span class="rocket-icon">🚀</span>
+        <span class="rocket-icon"></span>
         <span class="brand-text">SpaceX Mission Tracker</span>
       </div>
       <div class="nav-links">
