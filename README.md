@@ -22,7 +22,6 @@ An Angular 21 application that fetches and displays SpaceX mission data using th
 
 ## Screenshots
 
-> _(Add screenshots of Mission List, Filter, and Details pages here)_
 
 ---
 
@@ -95,4 +94,4 @@ src/app/
 
 ---
 
-_Developed by Kash – George Brown College, COMP3133_
+_Developed by Nirja Dabhi – George Brown College, COMP3133_
