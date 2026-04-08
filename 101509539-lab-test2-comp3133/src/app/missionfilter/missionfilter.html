@@ -1,0 +1,83 @@
+<div class="page-header">
+  <h1 class="page-title">Filter Missions by Year</h1>
+</div>
+
+<div class="filter-bar">
+  <select [formControl]="yearControl" class="year-select">
+    <option value="">-- Select Launch Year --</option>
+    @for (year of years; track year) {
+      <option [value]="year">{{ year }}</option>
+    }
+  </select>
+  <button class="search-btn" (click)="search()" [disabled]="!yearControl.value">
+    🔍 Search
+  </button>
+</div>
+
+@if (loading()) {
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Searching launches...</p>
+  </div>
+}
+
+@if (error()) {
+  <div class="error-state">⚠️ {{ error() }}</div>
+}
+
+@if (searched() && !loading() && !error()) {
+  <div class="results-header">
+    <span class="results-count">{{ missions().length }} mission(s) found in {{ yearControl.value }}</span>
+  </div>
+
+  @if (missions().length === 0) {
+    <div class="empty-state">No missions found for this year.</div>
+  }
+
+  <div class="mission-grid">
+    @for (mission of missions(); track mission.flight_number) {
+      <div class="mission-card" [routerLink]="['/missions', mission.flight_number]">
+        <div class="card-top">
+          @if (mission.links.mission_patch_small) {
+            <img [src]="mission.links.mission_patch_small" [alt]="mission.mission_name" class="patch" />
+          } @else {
+            <div class="patch-placeholder">🚀</div>
+          }
+          <div>
+            <div class="mission-name">{{ mission.mission_name }}</div>
+            <div class="meta">#{{ mission.flight_number }} · {{ mission.launch_year }}</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="info-row">
+          <span class="info-label">Mission IDs</span>
+          <span>{{ mission.mission_id.join(', ') || '–' }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Launch Year</span>
+          <span>{{ mission.launch_year }}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Successful Launch</span>
+          <span [class]="getStatusClass(mission.launch_success)">
+            @switch (mission.launch_success) {
+              @case (true) { Yes }
+              @case (false) { No }
+              @default { No Data }
+            }
+          </span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Successful Landing</span>
+          <span [class]="getStatusClass(mission.land_success)">
+            @switch (mission.land_success) {
+              @case (true) { Yes }
+              @case (false) { No }
+              @default { No Data }
+            }
+          </span>
+        </div>
+      </div>
+    }
+  </div>
+}

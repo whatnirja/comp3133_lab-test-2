@@ -1,0 +1,70 @@
+<div class="page-header">
+  <h1 class="page-title">SpaceX Mission Launch List</h1>
+  <p class="page-subtitle">All launches from the SpaceX fleet</p>
+</div>
+
+@if (loading()) {
+  <div class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading missions...</p>
+  </div>
+}
+
+@if (error()) {
+  <div class="error-state">
+    <span>⚠️</span> {{ error() }}
+  </div>
+}
+
+@if (!loading() && !error()) {
+  <div class="mission-grid">
+    @for (mission of missions(); track mission.flight_number) {
+      <div class="mission-card" [routerLink]="['/missions', mission.flight_number]">
+        <div class="card-header">
+          <div class="patch-container">
+            @if (mission.links.mission_patch_small) {
+              <img [src]="mission.links.mission_patch_small" [alt]="mission.mission_name" class="mission-patch" />
+            } @else {
+              <div class="patch-placeholder">🚀</div>
+            }
+          </div>
+          <div class="mission-info">
+            <h3 class="mission-name">{{ mission.mission_name }}</h3>
+            <span class="flight-number">#{{ mission.flight_number }}</span>
+            <span class="launch-year">{{ mission.launch_year }}</span>
+          </div>
+          <div class="status-badge" [class]="getStatusClass(mission.launch_success)">
+            @switch (mission.launch_success) {
+              @case (true) { ✓ Success }
+              @case (false) { ✗ Failed }
+              @default { ? Unknown }
+            }
+          </div>
+        </div>
+
+        <div class="rocket-info">
+          <span class="label">Rocket:</span>
+          <span>{{ mission.rocket.rocket_name }}</span>
+          <span class="sep">·</span>
+          <span class="text-muted">{{ mission.rocket.rocket_type }}</span>
+        </div>
+
+        @if (mission.details) {
+          <p class="mission-details">{{ mission.details }}</p>
+        }
+
+        <div class="card-links">
+          @if (mission.links.article_link) {
+            <a [href]="mission.links.article_link" target="_blank" class="link-btn" (click)="$event.stopPropagation()">📰 Article</a>
+          }
+          @if (mission.links.wikipedia) {
+            <a [href]="mission.links.wikipedia" target="_blank" class="link-btn" (click)="$event.stopPropagation()">📖 Wikipedia</a>
+          }
+          @if (mission.links.video_link) {
+            <a [href]="mission.links.video_link" target="_blank" class="link-btn" (click)="$event.stopPropagation()">▶ Video</a>
+          }
+        </div>
+      </div>
+    }
+  </div>
+}
